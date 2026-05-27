@@ -2,12 +2,12 @@
 #+STARTUP: overview indent
 #+COLUMNS: %40ITEM %[/]
 
-* Arrays [0/14]
-- [ ] Introduction
-- [ ] Memory Management
-- [ ] Input and Output
-- [ ] ArrayList Introduction
-- [ ] Linear Search
+* Arrays [5/14]
+- [X] Introduction
+- [X] Memory Management
+- [X] Input and Output
+- [X] ArrayList Introduction
+- [X] Linear Search
 - [ ] Binary Search
 - [ ] Modified Binary Search
 - [ ] Binary Search on 2D Arrays
