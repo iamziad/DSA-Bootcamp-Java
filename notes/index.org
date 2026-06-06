@@ -1,0 +1,3 @@
+
+** Math tricks & formulas
+- Combination formula for pairs: =count * (count - 1) / 2=
