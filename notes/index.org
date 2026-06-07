@@ -1,3 +1,17 @@
+#+TITLE: DSA notes
 
-** Math tricks & formulas
+* Searching
+** Binary Search
+*** Time Complexity
+- =N/2^k = 1= => *Olog(N)*
+
+*** Algorithm
+- find middle element
+- if (target == mid) return it
+- if (target > mid) search the right half
+  - else search the left half
+- repeat until target == mid
+
+
+* Math tricks & formulas
 - Combination formula for pairs: =count * (count - 1) / 2=
