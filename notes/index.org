@@ -2,9 +2,7 @@
 
 * Searching
 ** Binary Search
-*** Time Complexity
-- =N/2^k = 1= => *Olog(N)*
-
+*** Time Complexity: $$\frac{N}{2^k} \to Olog(N)$$
 *** Algorithm
 - find middle element
 - if (target == mid) return it
