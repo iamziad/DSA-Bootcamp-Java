@@ -10,7 +10,7 @@
   - else search the left half
 - repeat until target == mid
 *** Tricks
-- in *digit* arrays if after the searching loop finishes:
+- in *digit* arrays after the searching loop finishes:
   - the *start* will be the (*ceil*) of the target.
   - the *end* will be the (*floor*) of the target.
 - *first* occurance of target will always be the *left* side (end = mid - 1).
@@ -18,6 +18,3 @@
 
 * Math tricks & formulas
 - Combination formula for pairs: =count * (count - 1) / 2=
-
-
-* Problems

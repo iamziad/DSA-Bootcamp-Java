@@ -45,6 +45,7 @@ class MountainArray {
 
         while (start <= end) {
             int mid = Math.addExact(start, end) / 2;
+
             if (arr[mid] == target) {
                 return mid;
             }

@@ -2,7 +2,7 @@
 #+AUTHOR: Ziad Ahmed
 #+DATE: Jul 15 2026
 :PROPERTIES:
-#+OPTIONS:
+#+STARTUP: content
 :END:
 
 * Arrays
