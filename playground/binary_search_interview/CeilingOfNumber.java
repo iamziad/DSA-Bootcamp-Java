@@ -1,12 +1,15 @@
 class CeilingOfNumber {
     public static void main(String[] args) {
-        int[] arr = {2, 3, 5, 9, 14, 16, 18};
+        int[] arr = { 2, 3, 5, 9, 14, 16, 18 };
+        int[] arr2 = {1, 2, 3, 4, 5};
         int ans1 = ceilingOfNumber(arr, 15); // 5
         int ans2 = ceilingOfNumber(arr, 17); // 6
         int ans3 = ceilingOfNumber(arr, 4); // 2
+        int ans4 = ceilingOfNumber(arr2, 10); // 2
         System.out.println(ans1);
         System.out.println(ans2);
         System.out.println(ans3);
+        System.out.println(ans4);
     }
 
     static int ceilingOfNumber(int[] arr, int target) {

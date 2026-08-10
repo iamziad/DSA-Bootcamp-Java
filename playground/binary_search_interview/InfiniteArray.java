@@ -14,7 +14,7 @@ class InfiniteArray {
 
         while (target > arr[end]) {
             start = end + 1;
-            end   =  Math.multiplyExact(start, 2) + 1;
+            end = Math.multiplyExact(start, 2) + 1;
         }
 
         return binarySearch(arr, target, start, end);

@@ -5,7 +5,7 @@
 
 class MountainArray {
     public static void main(String[] args) {
-        int[] arr = {0,1,2,4,2,1};
+        int[] arr = { 0, 1, 2, 4, 2, 1 };
         System.out.println(findInMountainArray(3, arr));
     }
 
