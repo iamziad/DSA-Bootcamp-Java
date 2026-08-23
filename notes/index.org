@@ -1,4 +1,5 @@
 #+TITLE: DSA notes
+#+STARTUP: overview
 
 * Searching
 ** Binary Search
@@ -15,6 +16,59 @@
   - the *end* will be the (*floor*) of the target.
 - *first* occurance of target will always be the *left* side (end = mid - 1).
 - *last* occuracne will be in the *right* side (start = mid + 1),
+* Sorting
+** Selection Sort
+
+- Time complexity: O(n^2)
+- Space complexity: O(1) (in-place)
+
+  - الـselection sort بيختار عنصر ويفترض انه اصغر/اكبر عنصر في الـarray
+  - بيقارنه مع باقي العناصر اللي بعده.
+  - لو في عنصر اصغر/اكبر منه *بيبدل* معاه.
+
+** Bubble Sort
+
+- Time complexity: O(n^2)
+- Space complexity: O(1) (in-place)
+
+  - الـbubble sort بيقارن كل عناصر الـarray ما عدا اخر رقم (n - 1 >).
+
+  - لو الرقم اللي علي الشمال (i) اكبر من الرقم اللي علي اليمين (i + 1) هنبدلهم مع بعض, لاننا دائما في الترتيب التصاعدي بنزق الارقام الكبيرة علي اليمين.
+
+  - بعد ما المقارنة تخلص, هنلاقي اكبر عنصر في الـarray بقا اخر عنصر في مكانه الطبيعي.
+
+  - بس كدا احنا رتبنا رقم واحد بس, فا هنكرر المقارنة دي n - 1 مرة, وهنلاقي كل العناصر اترتبت.
+
+** InsertionSort
+
+- Time Complexity: O(n^2)
+- Space Complexity: O(1) (in-place)
+
+  - الـinserstion sort بيقسم الـarray لجزء مرتب وجزء غير مرتب.
+    - هنعتبر ان الجزء المرتب هو اول عنصر arr0
+    - هنعمل loop من 1 الي n - 1, يعني بنـloop علي الجزء الغير مرتب فقط.
+    - هنخزن العنصر الحالي في الجزء الغير مرتب في متغير tmp
+    - هنقارنه بكل اللي قبله, (وكل اللي قبله ده اللي هو الجزء المرتب)
+    - العناصر الاكبر هيتعملها shift لليمين, العنصر الاصغر هيفضل زي ما هو.
+    - لحد ما الـj هتكون واقفة عند العنصر اللي قبل اللي احنا هنبدله مع الـtmp
+
+#+begin_src java
+static void inserstionSort(int[] arr) {
+    for (int i = 1; i < arr.length; i++) {
+        int tmp = arr[i]; // current element in the unsorted side;
+        int j = i - 1; // last element in the sorted side
+
+        // compare the tmp with all elements in the sorted side
+        while (j >= 0 && arr[j] > tmp) {
+            arr[j + 1] = arr[j]; // shift to right
+            j--;
+        }
+
+        // stops at last sorted index - 1
+        arr[j + 1] = tmp;
+    }
+}
+#+end_src
 
 * Array Rotation
 *** 189. Rotate Array - https://leetcode.com/problems/rotate-array/

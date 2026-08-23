@@ -4,10 +4,9 @@
   element where we have to move n + n times which 2n => O(n).
  */
 
-
 import java.util.Arrays;
 
-class SortedMatrix {
+class SortedMatrixWithGaps {
     public static void main(String[] args) {
         int[][] matrix = {
                 { 10, 20, 30, 40 },
@@ -29,7 +28,7 @@ class SortedMatrix {
     static int[] search(int[][] matrix, int target) {
         int r = 0;
         int c = matrix.length - 1;
-        int[] res = {-1, -1};
+        int[] res = { -1, -1 };
 
         while (r < matrix.length && c >= 0) {
             if (target == matrix[r][c]) {

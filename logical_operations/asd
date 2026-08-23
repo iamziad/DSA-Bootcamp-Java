@@ -1,0 +1,8 @@
+void func(bool option1, bool option2, bool option3) {}
+
+func(false, true, false);
+
+
+void func(enum options)
+
+func(OPTION_1 | OPTION_3);
