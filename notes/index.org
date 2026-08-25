@@ -17,7 +17,8 @@
 - *first* occurance of target will always be the *left* side (end = mid - 1).
 - *last* occuracne will be in the *right* side (start = mid + 1),
 * Sorting
-** Selection Sort
+** In-place
+*** Selection Sort
 
 - Time complexity: O(n^2)
 - Space complexity: O(1) (in-place)
@@ -26,7 +27,7 @@
   - بيقارنه مع باقي العناصر اللي بعده.
   - لو في عنصر اصغر/اكبر منه *بيبدل* معاه.
 
-** Bubble Sort
+*** Bubble Sort
 
 - Time complexity: O(n^2)
 - Space complexity: O(1) (in-place)
@@ -39,7 +40,7 @@
 
   - بس كدا احنا رتبنا رقم واحد بس, فا هنكرر المقارنة دي n - 1 مرة, وهنلاقي كل العناصر اترتبت.
 
-** InsertionSort
+*** InsertionSort
 
 - Time Complexity: O(n^2)
 - Space Complexity: O(1) (in-place)
@@ -66,6 +67,40 @@ static void inserstionSort(int[] arr) {
 
         // stops at last sorted index - 1
         arr[j + 1] = tmp;
+    }
+}
+#+end_src
+
+*** CyclicSort
+
+- Time Complexity:
+  - n iterations + n swaps = O(n + n) => O(n)
+
+- الـCyclic sort هي طريقة سريعة للـsort, بس بتشتغل فقط طول ما الارقام في الـrange من 1:n, يعني لازم يكون الـindex بتاع كل عنصر هو قيمته - 1.
+
+- لكن لو في مسافات زي كدا =[10, 20, 30, 40, 50]= او =[1, 3, 4, 5]= مش هيشتغل كويس, لان حساب الـ =correctIdx= هيطلع غلط.
+
+- فكرته بسيطة جدا, اننا نحط كل عنصر عند الـindex اللي بيساوي قيمته - 1.
+
+- هنقارن كل عنصر بالعنصر اللي عند =index = value - 1=, ولو مش بيساوا بعض, هنبدلهم
+
+- بس الفكرة هنا, ان الرقم اللي بدلنا معاه, مش شرط يكون ده فعلا مكانه, فا لازم نعيد نفس العملية تاني, لحد ما الرقمين اللي بيتبدلوا مع بعض يكون هما الاتنين اترتبوا مش واحد بس منهم.
+
+- *اهم حاجة* ان الـpattern ده لازم يجي في ذهننا اول ما نسمع كلمة *range 1:n*
+
+#+begin_src java
+static void sort(int[] arr, boolean hasZero) {
+    int i = 0;
+
+    while (i < arr.length) {
+        int correctIdx = hasZero ? arr[i] : arr[i] - 1;
+
+        if (arr[i] != arr[correctIdx]) {
+            int tmp = arr[i];
+            arr[i] = arr[correctIdx];
+            arr[correctIdx] = tmp;
+        } else
+            i++;
     }
 }
 #+end_src
